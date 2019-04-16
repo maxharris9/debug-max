@@ -2,7 +2,7 @@
   "scripts": {
     "reset": "graphile-migrate reset",
     "start": "concurrently --kill-others --names migrate,server 'graphile-migrate watch' 'npm run server'",
-    "server": "postgraphile -c max -s graphql --watch"
+    "server": "postgraphile -c max -s graphql --watch --enhance-graphiql --append-plugins `pwd`/plugin.js"
   },
   "dependencies": {
     "graphile-migrate": "^0.0.1-alpha.1",
