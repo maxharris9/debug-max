@@ -1,7 +1,7 @@
 {
   "scripts": {
     "reset": "graphile-migrate reset",
-    "start": "concurrently --kill-others --names migrate,server 'graphile-migrate watch' 'npm run server'",
+    "start": "concurrently --kill-others --names migrate,server 'graphile-migrate watch' 'nodemon -x \"npm run server\"'",
     "server": "postgraphile -c max -s graphql --watch --enhance-graphiql --append-plugins `pwd`/plugin.js"
   },
   "dependencies": {
@@ -10,6 +10,7 @@
     "postgraphile": "^4.4.0-beta.11"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.11"
   }
 }
