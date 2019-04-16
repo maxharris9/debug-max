@@ -1,0 +1,4 @@
+{
+  "connectionString": "postgres://max@localhost/max",
+  "afterReset": []
+}

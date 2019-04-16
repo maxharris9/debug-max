@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "reset": "graphile-migrate reset",
+    "start": "concurrently --kill-others --names migrate,server 'graphile-migrate watch' 'npm run server'",
+    "server": "postgraphile -c max -s graphql --watch"
+  },
+  "dependencies": {
+    "graphile-migrate": "^0.0.1-alpha.1",
+    "graphile-utils": "^4.4.0-beta.11",
+    "postgraphile": "^4.4.0-beta.11"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
